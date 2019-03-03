@@ -34,6 +34,13 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
   TextStyle dropDownLabelstyle = TextStyle(fontSize: 16.0, color: Colors.white);
   TextStyle dropDownMenustyle = TextStyle(fontSize: 16.0, color: Colors.black);
 
+  var theme = new ThemeData(
+    primaryColor: Color(0xFFF3791A),
+    fontFamily: 'Oxygen',
+  );
+
+  var selectedLocationIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -63,13 +70,18 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                         color: Colors.white,
                       ),
                       SizedBox(
-                        height: 30.0,
+                        width: 10.0,
                       ),
                       new PopupMenuButton(
+                        onSelected: (index) {
+                          setState(() {
+                            selectedLocationIndex = index;
+                          });
+                        },
                         child: new Row(
                           children: <Widget>[
                             Text(
-                              locations[0],
+                              locations[selectedLocationIndex],
                               style: dropDownLabelstyle,
                             ),
                             Icon(
@@ -96,8 +108,46 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                               ),
                             ],
                       ),
+                      Spacer(),
+                      Icon(
+                        Icons.settings,
+                        color: Colors.white,
+                      ),
                     ],
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 30.0),
+                ),
+                Row(
+                  children: <Widget>[
+                    SizedBox(
+                      width: 50.0,
+                    ),
+                    Text(
+                      'Where would\nyou want to go?',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35.0,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: 16.0,
+                    ),
+                    // Padding(
+                    //    padding: EdgeInsets.symmetric(horizontal: 32.0),
+                    //   child:
+                    Material(
+                      elevation: 5.0,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(30.0),
+                      ),
+                      child: new TextField(),
+                    ),
+                    // ),
+                  ],
                 ),
               ],
             ),
