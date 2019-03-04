@@ -1,6 +1,7 @@
 import 'CustomShapeClipper.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'customBottomBar.dart';
 
 void main() => runApp(new MaterialApp(
       title: 'Flight List Mock up',
@@ -12,11 +13,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new Column(
-        children: <Widget>[
-          HomeScreenTopPart(),
-          HomeScreenBottomPart,
-        ],
+      bottomNavigationBar: customBottomBar(),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: new Column(
+          children: <Widget>[
+            HomeScreenTopPart(),
+            HomeScreenBottomPart,
+          ],
+        ),
       ),
     );
   }
