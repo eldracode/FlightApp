@@ -1,6 +1,6 @@
 # Flight App UI
 
-UI taken from -[Dribble](https://dribbble.com/shots/5662956-Flight-Tickets-Deal-Tracker-App-Day-340-365-Project365)
+Mock up of a UI from [Dribble](https://dribbble.com/shots/5662956-Flight-Tickets-Deal-Tracker-App-Day-340-365-Project365)
 
 A new Flutter project.
 
