@@ -2,7 +2,7 @@
 
 Mock up of a UI from [Dribble](https://dribbble.com/shots/5662956-Flight-Tickets-Deal-Tracker-App-Day-340-365-Project365)
 
-![Screenshot](flutter_04.png)
+<img src="flutter_04.png" height="400em" width="200em">
 
 A new Flutter project.
 
